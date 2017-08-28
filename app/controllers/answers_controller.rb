@@ -23,6 +23,7 @@ class AnswersController < ApplicationController
   # POST /answers
   def create
     @answer = Answer.new(answer_params)
+    @answer.question = @question
 
     if @answer.save
       redirect_to @question, notice: 'Answer was successfully created.'

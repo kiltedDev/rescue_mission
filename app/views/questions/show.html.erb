@@ -10,7 +10,7 @@
 </p>
 
 <p>
-<% @answers.each do |a| %>
+<% @question.answers.order(created_at: :desc).each do |a| %>
   <strong><%= a.title %></strong>
   <br/>
   <%= a.description %>
