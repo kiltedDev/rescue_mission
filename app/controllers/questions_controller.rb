@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_action :set_question, only: [:show, :edit, :update]
+  before_action :set_question, only: [:show, :edit, :update, :destroy]
 
   # GET /questions
   def index
@@ -8,7 +8,7 @@ class QuestionsController < ApplicationController
 
   # GET /questions/1
   def show
-    @answers = @question.answers  
+    @answers = @question.answers
   end
 
   # GET /questions/new
@@ -38,6 +38,11 @@ class QuestionsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @question.destroy
+    redirect_to questions_url, notice: 'Question was successfully destroyed.'
   end
 
   private

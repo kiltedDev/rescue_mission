@@ -1,5 +1,5 @@
 class AnswersController < ApplicationController
-  before_action :set_question, only: [:index, :show, :edit, :new, :update, :create]
+  before_action :set_question
   before_action :set_answer, only: [:index, :show, :edit, :update]
 
   # GET /answers
