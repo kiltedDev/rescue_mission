@@ -9,6 +9,16 @@
 
 </p>
 
+<p>
+<% @answers.each do |a| %>
+  <strong><%= a.title %></strong>
+  <br/>
+  <%= a.description %>
+  <br/>
+  <br/>
+<% end %>
+</p>
+
 <%= link_to 'New Answer', new_question_answer_path(@question) %>
 <br>
 <%= link_to 'Edit', edit_question_path(@question) %> |
